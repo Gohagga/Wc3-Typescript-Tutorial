@@ -18,7 +18,10 @@
     },
     "plugins": [
       {
-        "transform": "war3-transformer"
+        "transform": "war3-transformer",
+        "mapDir": "C:/Users/bartu/Desktop/Repos/Wc3-Typescript-Tutorial/maps/map.w3x",
+        "entryFile": "C:/Users/bartu/Desktop/Repos/Wc3-Typescript-Tutorial/src/main.ts",
+        "outputDir": "C:/Users/bartu/Desktop/Repos/Wc3-Typescript-Tutorial/dist/map.w3x"
       }
     ],
     "types": [

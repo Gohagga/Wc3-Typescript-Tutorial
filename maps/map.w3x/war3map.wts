@@ -53,3 +53,105 @@ STRING 11
 Player 12
 }
 
+STRING 12
+// Doodads: D000 (Wall Brick Medium), Name (Name)
+{
+Wall Brick Medium
+}
+
+STRING 14
+// Doodads: D002 (Wall Barred Endcap), Name (Name)
+{
+Wall Barred Endcap
+}
+
+STRING 16
+// Doodads: D004 (Wall Brick Long), Name (Name)
+{
+Wall Brick Long
+}
+
+STRING 17
+// Doodads: D005 (Bricks Clean Dark), Name (Name)
+{
+Bricks Clean Dark
+}
+
+STRING 18
+// Doodads: D006 (Door), Name (Name)
+{
+Door
+}
+
+STRING 19
+// Destructibles: B000 (Wall Brick Corner BL), Name (Name)
+{
+Wall Brick Corner BL
+}
+
+STRING 20
+// Destructibles: B002 (Wall Brick Corner TL), Name (Name)
+{
+Wall Brick Corner TL
+}
+
+STRING 21
+// Destructibles: B003 (Wall Brick Corner TR), Name (Name)
+{
+Wall Brick Corner TR
+}
+
+STRING 22
+// Destructibles: B001 (Wall Brick Corner BR), Name (Name)
+{
+Wall Brick Corner BR
+}
+
+STRING 23
+// Destructibles: B006 (Wall Brick Short B), Name (Name)
+{
+Wall Brick Short B
+}
+
+STRING 24
+// Destructibles: B005 (Wall Brick Short L), Name (Name)
+{
+Wall Brick Short L
+}
+
+STRING 25
+// Destructibles: B007 (Wall Brick Short R), Name (Name)
+{
+Wall Brick Short R
+}
+
+STRING 26
+// Destructibles: B004 (Wall Brick Short T), Name (Name)
+{
+Wall Brick Short T
+}
+
+STRING 27
+// Destructibles: B008 (Wall Brick Medium L), Name (Name)
+{
+Wall Brick Medium L
+}
+
+STRING 28
+// Destructibles: B009 (Wall Brick Medium R), Name (Name)
+{
+Wall Brick Medium R
+}
+
+STRING 29
+// Destructibles: B00A (Wall Brick Medium T), Name (Name)
+{
+Wall Brick Medium T
+}
+
+STRING 30
+// Destructibles: B00B (Wall Brick Medium B), Name (Name)
+{
+Wall Brick Medium B
+}
+

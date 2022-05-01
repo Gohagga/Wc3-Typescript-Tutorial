@@ -1,6 +1,16 @@
+gg_rct_RoomRegion = nil
+gg_rct_Wall_BL = nil
+gg_rct_Wall_B = nil
 gg_trg_Initialization = nil
 gg_unit_Hblm_0003 = nil
 gg_unit_Hpal_0002 = nil
+gg_rct_Wall_BR = nil
+gg_rct_Wall_L = nil
+gg_rct_Wall_R = nil
+gg_rct_Wall_TL = nil
+gg_rct_Wall_TR = nil
+gg_rct_Wall_T = nil
+gg_rct_DungeonMapRegion = nil
 function InitGlobals()
 end
 
@@ -10,7 +20,7 @@ function CreateUnitsForPlayer0()
     local unitID
     local t
     local life
-    gg_unit_Hblm_0003 = BlzCreateUnitWithSkin(p, FourCC("Hblm"), 44.7, -860.1, 3.208, FourCC("Hblm"))
+    gg_unit_Hblm_0003 = BlzCreateUnitWithSkin(p, FourCC("Hblm"), 682.0, -694.6, 3.208, FourCC("Hblm"))
 end
 
 function CreateUnitsForPlayer1()
@@ -19,7 +29,7 @@ function CreateUnitsForPlayer1()
     local unitID
     local t
     local life
-    gg_unit_Hpal_0002 = BlzCreateUnitWithSkin(p, FourCC("Hpal"), 237.9, -832.4, 269.898, FourCC("Hpal"))
+    gg_unit_Hpal_0002 = BlzCreateUnitWithSkin(p, FourCC("Hpal"), 776.7, -769.9, 269.898, FourCC("Hpal"))
 end
 
 function CreatePlayerBuildings()
@@ -35,10 +45,25 @@ function CreateAllUnits()
     CreatePlayerUnits()
 end
 
+function CreateRegions()
+    local we
+    gg_rct_RoomRegion = Rect(-512.0, -1504.0, 2048.0, 1056.0)
+    gg_rct_Wall_BL = Rect(-2560.0, -1024.0, -2048.0, -512.0)
+    gg_rct_Wall_B = Rect(-2048.0, -1024.0, -1536.0, -512.0)
+    gg_rct_Wall_BR = Rect(-1536.0, -1024.0, -1024.0, -512.0)
+    gg_rct_Wall_L = Rect(-2560.0, -512.0, -2048.0, 0.0)
+    gg_rct_Wall_R = Rect(-1536.0, -512.0, -1024.0, 0.0)
+    gg_rct_Wall_TL = Rect(-2560.0, 0.0, -2048.0, 512.0)
+    gg_rct_Wall_TR = Rect(-1536.0, 0.0, -1024.0, 512.0)
+    gg_rct_Wall_T = Rect(-2048.0, 0.0, -1536.0, 512.0)
+    gg_rct_DungeonMapRegion = Rect(1024.0, 2560.0, 8704.0, 10240.0)
+end
+
 --
 function Trig_Initialization_Actions()
     SelectUnitForPlayerSingle(gg_unit_Hblm_0003, Player(0))
     SelectUnitForPlayerSingle(gg_unit_Hpal_0002, Player(1))
+    CreateFogModifierRectBJ(true, Player(0), FOG_OF_WAR_VISIBLE, GetPlayableMapRect())
 end
 
 function InitTrig_Initialization()
@@ -142,12 +167,14 @@ function InitAllyPriorities()
 end
 
 function main()
-    SetCameraBounds(-3328.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), -3584.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM), 3328.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), 3072.0 - GetCameraMargin(CAMERA_MARGIN_TOP), -3328.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), 3072.0 - GetCameraMargin(CAMERA_MARGIN_TOP), 3328.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), -3584.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM))
+    SetCameraBounds(-3328.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), -3584.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM), 11520.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), 11264.0 - GetCameraMargin(CAMERA_MARGIN_TOP), -3328.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), 11264.0 - GetCameraMargin(CAMERA_MARGIN_TOP), 11520.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), -3584.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM))
     SetDayNightModels("Environment\\DNC\\DNCLordaeron\\DNCLordaeronTerrain\\DNCLordaeronTerrain.mdl", "Environment\\DNC\\DNCLordaeron\\DNCLordaeronUnit\\DNCLordaeronUnit.mdl")
+    SetTerrainFogEx(0, 20000.0, 20000.0, 0.500, 0.000, 0.000, 0.000)
     NewSoundEnvironment("Default")
     SetAmbientDaySound("LordaeronSummerDay")
     SetAmbientNightSound("LordaeronSummerNight")
     SetMapMusic("Music", true, 0)
+    CreateRegions()
     CreateAllUnits()
     InitBlizzard()
     InitGlobals()
